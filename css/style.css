@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+  }
+
+  html{
+
+    scroll-behavior: smooth;
+  }
+  .navv{
+    width: 100%;
+    /*position: fixed;*/
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    background-color: rgba(233, 185, 81, 0.822);
+} 
+.footer-index{
+    margin-top: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: rgba(109, 66, 45);
+      color: black;
+  }
+  
