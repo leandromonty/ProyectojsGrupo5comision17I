@@ -78,67 +78,18 @@
 
       <!-- Fin Navbar -->
     </header>
-    <main>
-        <h1 class="display-3 text-center">Administrador</h1>
-        <hr />
-        <article class="bg-light p-3 my-5">
-          <h3>Cargar productos</h3>
-          <hr />
-          <form id="formProducto">
+    <main class="container my-5">
+        <form class="outline-form p-5 bg-light w-50">
             <div class="mb-3">
-              <label for="" class="form-label">Codigo</label>
-              <input
-                id="codigo"
-                type="text"
-                class="form-control"
-                placeholder="Ingresar un codigo"
-              />
-
-              
-              <div class="invalid-feedback">Este campo es obligatorio</div>
+              <label for="LoginEmail" class="form-label fontPri">Email</label>
+              <input type="email" class="form-control fontPri" placeholder="introduzca su email" id="LoginEmail" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="" class="form-label">Producto</label>
-              <input
-                id="producto"
-                type="text"
-                class="form-control"
-                placeholder="Producto"
-              />
-              <div class="invalid-feedback">Este campo es obligatorio</div>
+              <label for="LoginContraseña" class="form-label fontPri">Contraseña</label>
+              <input type="password" class="form-control fontPri" placeholder="introduzca su contraseña" id="LoginContraseña">
             </div>
-            <div class="mb-3">
-              <label for="" class="form-label">descripcion</label>
-              <textarea id="descripcion" class="form-control"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">cantidad</label>
-              <input
-                type="text"
-                class="form-control"
-                id="cantidad"
-                placeholder="ej: 5"
-              />
-              <div class="invalid-feedback">
-                Este campo es obligatorio </div>
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">URL</label>
-              <input type="text" class="form-control" id="url" />
-            </div>
-            <button class="btn btn-primary" type="submit">Guardar</button>
-            <div
-              class="alert alert-danger mt-4 d-none"
-              role="alert"
-              id="msjAlerta"
-            >
-              Debe completar todos los datos marcados
-            </div>
+            <button id="btnSubmitLogin" type="submit" class="btn btn-primary fontPri">Enviar</button>
           </form>
-        </article>
-        <section>
-         
-          
     </main>
 
     <!--Footer-->
