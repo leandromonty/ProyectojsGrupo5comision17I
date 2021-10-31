@@ -44,3 +44,9 @@
   #btnRegistrarse:hover{
     box-shadow: 1px 1px 1px rgb(68, 42, 29);
   }
+
+  .botonini{
+      background-color: black;
+      border-color: black;
+  }
+  
