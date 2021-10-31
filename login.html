@@ -79,10 +79,10 @@
       <!-- Fin Navbar -->
     </header>
     <main class="container">
-      <div class="row my-5 py-5">
+      <div class="row my-5 py-5 justify-content-center">
         <div class="col-12 col-md-6">
       
-        <form class="outline-form p-5 bg-light >
+        <form class="outline-form p-5 bg-light" >
         
               <label for="LoginEmail" class="form-label fontPri">Email</label>
               <input type="email" class="form-control fontPri" placeholder="introduzca su email" id="LoginEmail" aria-describedby="emailHelp">
@@ -90,11 +90,22 @@
           
               <label for="LoginContraseña" class="form-label fontPri">Contraseña</label>
               <input type="password" class="form-control fontPri" placeholder="introduzca su contraseña" id="LoginContraseña">
-            
+              <br>
+              <button id="btnSubmitLogin" type="submit" class="btn btn-primary fontPri botonini">Iniciar sesion</button>
+              <div class="row checkbox mt-2">
+                <div class="col-12 col-md-6">
+                  <label><input type="checkbox"/>Recordame</label>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                  <a class="form-forgetpass" data-toggle="modal" data-target="#passmodal">¿Olvidaste tu contraseña?</a>
+                </div>
+              </div>
           </form>
-          <button id="btnSubmitLogin" type="submit" class="btn btn-primary fontPri botonini">Iniciar sesion</button>
         </div>
       </div>
+      
+    
+  
       
     </main>
 
