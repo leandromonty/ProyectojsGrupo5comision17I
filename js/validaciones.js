@@ -20,15 +20,25 @@ export function validarEmail(input){
  }
 }
 
-
-
-export function validarGeneral(){
-    let alerta = document.querySelector('#msjAlerta');
-    if(validarRequerido(nombre) && validarRequerido(contrasenna) && validarEmail(input)){
-        alerta.className = 'alert alert-danger mt-4 d-none';
+export function validarContrasenna(input){
+    let patron = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+    if(patron.test(input.value)){
+        input.className = 'form-control is-valid';
         return true;
-    }else{
-        alerta.className = 'alert alert-danger mt-4';
+    }else {
+        input.className = 'form-control is-invalid';
         return false;
     }
 }
+
+
+// export function validarGeneral(){
+//     let alerta = document.querySelector('#msjAlerta');
+//     if(validarRequerido(nombre) && validarRequerido(contrasenna) && validarEmail(input)){
+//         alerta.className = 'alert alert-danger mt-4 d-none';
+//         return true;
+//     }else{
+//         alerta.className = 'alert alert-danger mt-4';
+//         return false;
+//     }
+// }
