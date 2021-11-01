@@ -60,4 +60,15 @@
     background-position: center center;
     margin-top: 80px;
   }
-  
+
+  .sobre-nosotros{
+    object-fit: cover;
+    width: 5px;
+    height: 300px;
+    
+    }
+    .fotopersonal{
+      width: 180px;
+      object-fit: cover;
+      
+  } 
