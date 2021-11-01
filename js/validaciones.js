@@ -1,4 +1,4 @@
-export function validarCampoRequerido(input){
+export function validarRequerido(input){
     if(input.value.trim().length > 0){
         input.className = 'form-control is-valid';
         return true;
@@ -20,26 +20,14 @@ export function validarEmail(input){
  }
 }
 
-export function validarContrasenna(input){
-    if(input.length < 6){
-        input.className = 'form-control is-invalid';
-        return false;
-    }else{
-        input.className = 'form-control is-valid';
-        return true;
-    }
-    // aca solo valida que tenga por lo menos 6 caracteres
 
-}
 
 export function validarGeneral(){
-    // previene q recargue la pagina
     let alerta = document.querySelector('#msjAlerta');
-    if(validarCampoRequerido() && validarEmail && validarContrasenna){
+    if(validarRequerido(nombre) && validarRequerido(contrasenna) && validarEmail(input)){
         alerta.className = 'alert alert-danger mt-4 d-none';
         return true;
     }else{
-        // aca mostrar el alert que pide recargar los datos del html
         alerta.className = 'alert alert-danger mt-4';
         return false;
     }

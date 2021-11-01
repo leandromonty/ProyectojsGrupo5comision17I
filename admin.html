@@ -59,7 +59,7 @@
                   >Admin</a
                   >
                 </li>
-                <li class="nav-item ml-auto border-transition">
+                <li class="nav-item ml-auto border-transition" id="btnLogin">
                   <a class="nav-link text-white fontPri" href="login.html"
                   >Iniciar sesión</a
                   >
@@ -79,14 +79,14 @@
       <!-- Fin Navbar -->
     </header>
     <main>
-        <h1 class="display-3 text-center">Administrador</h1>
+        <h1 class="display-3 text-center fontPri">Administrador</h1>
         <hr />
         <article class="bg-light p-3 my-5">
-          <h3>Cargar productos</h3>
+          <h3 class="fontPri">Cargar productos</h3>
           <hr />
           <form id="formProducto">
             <div class="mb-3">
-              <label for="" class="form-label">Codigo</label>
+              <label for="" class="form-label fontPri">Codigo</label>
               <input
                 id="codigo"
                 type="text"
@@ -95,40 +95,40 @@
               />
 
               
-              <div class="invalid-feedback">Este campo es obligatorio</div>
+              <div class="invalid-feedback fontPri">Este campo es obligatorio</div>
             </div>
             <div class="mb-3">
-              <label for="" class="form-label">Producto</label>
+              <label for="" class="form-label fontPri">Producto</label>
               <input
                 id="producto"
                 type="text"
                 class="form-control"
                 placeholder="Producto"
               />
-              <div class="invalid-feedback">Este campo es obligatorio</div>
+              <div class="invalid-feedback fontPri">Este campo es obligatorio</div>
             </div>
             <div class="mb-3">
-              <label for="" class="form-label">descripcion</label>
+              <label for="" class="form-label fontPri">descripcion</label>
               <textarea id="descripcion" class="form-control"></textarea>
             </div>
             <div class="mb-3">
-              <label for="" class="form-label">cantidad</label>
+              <label for="" class="form-label fontPri">cantidad</label>
               <input
                 type="text"
                 class="form-control"
                 id="cantidad"
                 placeholder="ej: 5"
               />
-              <div class="invalid-feedback">
+              <div class="invalid-feedback fontPri">
                 Este campo es obligatorio </div>
             </div>
             <div class="mb-3">
-              <label for="" class="form-label">URL</label>
+              <label for="" class="form-label fontPri">URL</label>
               <input type="text" class="form-control" id="url" />
             </div>
-            <button class="btn btn-primary" type="submit">Guardar</button>
+            <button class="btn btn-primary fontPri" type="submit">Guardar</button>
             <div
-              class="alert alert-danger mt-4 d-none"
+              class="alert alert-danger mt-4 d-none fontPri"
               role="alert"
               id="msjAlerta"
             >
