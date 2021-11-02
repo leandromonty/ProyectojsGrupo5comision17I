@@ -123,9 +123,29 @@
             >
               Debe completar todos los campos
             </div>
-
-            <button id="btnNuevoP" class="btn btn-outline-info">Nuevo Producto</button>
           </form>
+          <div>
+            <button id="btnNuevoP" class="btn btn-outline-info my-4">Nuevo Producto</button>
+          </div>
+          <section>
+            <article class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaProductos">
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+          </section>
         </article>
         <section>
          
@@ -158,11 +178,7 @@
 
     <!--Fin footer-->
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="js/admin.js"></script>
     <script src="https://use.fontawesome.com/823835b326.js"></script>
   </body>

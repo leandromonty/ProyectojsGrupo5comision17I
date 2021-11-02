@@ -5,8 +5,9 @@ let codigo = document.getElementById('inputCodigo')
 let nombre = document.getElementById('inputNombre')
 let descripcion = document.getElementById('inputDescripcion')
 let url = document.getElementById('inputUrl')
-let btnNuevoP = document.getElementById("botonNuevoP");
-let ListaProductos = [];
+let btnNuevoP = document.getElementById('btnNuevoP');
+let formulario = document.getElementById('formProducto')
+let Lproductos = [];
 let productoExistente = false;
 
 codigo.addEventListener('blur',()=>{validarCodigo(codigo)})
@@ -20,8 +21,7 @@ cargaInicial()
 
 function guardarProducto(e) {
     e.preventDefault()
-
-    if (validarGeneral()) {
+    if (validarRequerido(codigo) && validarCodigo(codigo) && validarRequerido(nombre) && validarRequerido(descripcion) && validarURL(url)) {
      
       if (productoExistente === false) {
        
@@ -39,7 +39,6 @@ function limpiarForm() {
     codigo.className = "form-control";
     nombre.className = "form-control";
     descripcion.className = "form-control";
-    cantidad.className = "form-control";
     url.className = "form-control";
     formulario.reset();
     productoExistente = false;
@@ -56,11 +55,11 @@ function agregarProducto() {
       url.value
     );
     
-    ListaProductos.push(productoNuevo);
+    Lproductos.push(productoNuevo);
    
-    localStorage.setItem("arregloProductos", JSON.stringify(ListaProductos));
+    localStorage.setItem("arregloProductos", JSON.stringify(Lproductos));
    
-    limpiarFormulario();
+    limpiarForm();
    
     Swal.fire(
       "Producto Agregado!",
@@ -71,16 +70,15 @@ function agregarProducto() {
 }
 
 function cargaInicial() {
-    ListaProductos = JSON.parse(localStorage.getItem("arregloProductos")) || [];
+    Lproductos = JSON.parse(localStorage.getItem("arregloProductos")) || [];
   
-    ListaProductos.forEach((item) => {
+    Lproductos.forEach((item) => {
   
       crearFilas(item);
     });
   }
   
   function crearFilas(item) {
-      // crear la tabla
     let tabla = document.getElementById("tablaProductos");
     tabla.innerHTML += `<tr>
       <th scope="row">${item.codigo}</th>
@@ -88,10 +86,82 @@ function cargaInicial() {
       <td>${item.descripcion}</td>
       <td>${item.url}</td>
       <td>
-        <button class="btn btn-outline-primary" onclick="editarFila('${item.codigo}')" >Editar</button>
+        <button class="btn btn-outline-primary mt-2" onclick="editarFila('${item.codigo}')" >Editar</button>
         <button class="btn btn-danger mt-2" onclick="eliminarProducto('${item.codigo}')">Borrar</button>
       </td>
     </tr>`;
   
     limpiarForm();
   }
+
+  window.editarFila = function editarFila(codigoP){
+    let productoB = Lproductos.find((item)=>{
+      return item.codigo == codigoP
+    });
+    codigo.value = productoB.codigo;
+    nombre.value = productoB.nombre;
+    descripcion.value = productoB.descripcion;
+    url.value = productoB.url;
+
+    productoExistente = true;
+
+    Swal.fire(
+      "Producto cargado!",
+      "Su producto esta listo para editar, puede cambie lo que desee",
+      "warning"
+    );
+  }
+
+  function borrarValueInput() {
+    let tabla = document.getElementById("tablaProductos");
+    tabla.innerHTML = "";
+  }
+
+  function guardarEdicion() {
+    let posProducto = Lproductos.findIndex((item) => {
+      return item.codigo == codigo.value;
+    });
+    Lproductos[posProducto].nombre = nombre.value;
+    Lproductos[posProducto].descripcion = descripcion.value;
+    Lproductos[posProducto].url = url.value;
+    localStorage.setItem("arregloProductos", JSON.stringify(Lproductos));
+    borrarValueInput();
+    Lproductos.forEach((item) => {
+      crearFilas(item);
+    });
+    Swal.fire(
+      "Producto Editado!",
+      "Su producto fue correctamente editado",
+      "success"
+    );
+  }
+
+  window.eliminarProducto = function eliminarProducto(codigo) {
+    Swal.fire({
+      title: "Esta seguro?",
+      text: "Este cambio no puede ser revertido!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borrarlo!",
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let pFiltrado = Lproductos.filter((item) => {
+          return item.codigo != codigo;
+        });
+       
+        Lproductos = pFiltrado;
+       
+        localStorage.setItem("arregloProductos", JSON.stringify(Lproductos));
+       
+        borrarValueInput();
+      
+        Lproductos.forEach((item) => {
+          return crearFilas(item);
+        });
+        Swal.fire("Borrado!", "Tu archivo fue eliminado.", "success");
+      }
+    });
+  };

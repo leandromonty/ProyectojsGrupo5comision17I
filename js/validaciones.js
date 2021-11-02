@@ -43,16 +43,7 @@ export function validarCodigo(input) {
     
 }
 
-export function validarGeneral(){
-    let alerta = document.querySelector('#msjAlerta');
-    if(validarCodigo(codigo) && validarRequerido(nombre) && validarRequerido(contrasenna) && validarEmail(input)){
-        alerta.className = 'alert alert-danger mt-4 d-none';
-        return true;
-    }else{
-        alerta.className = 'alert alert-danger mt-4';
-        return false;
-    }
-}
+
 
 export function validarURL(input){
     let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/
@@ -61,6 +52,19 @@ export function validarURL(input){
         return true;
     }else{
         input.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+
+export function validarGeneral(){
+    
+    let alerta = document.querySelector('#msjAlerta');
+    if(validarCodigo(codigo) && validarRequerido(descripcion) && validarRequerido(nombre) && validarURL(url)){
+        alerta.className = 'alert alert-danger mt-4 d-none';
+        return true;
+    }else{
+        alerta.className = 'alert alert-danger mt-4';
         return false;
     }
 }
