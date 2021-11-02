@@ -6,8 +6,6 @@ let contrasenna = document.getElementById('contrasennaRegistro')
 let email = document.getElementById('emailRegistro')
 let formulario = document.getElementById('formularioR');
 let ListaUsuarios = [];
-let NavA = document.getElementById('NavAdmin')
-let Admin = new Usuario('Admin','tomassilvetti7@gmail.com', 'admin12345', 'Admin' )
 
 nombre.addEventListener('blur', ()=>{validarRequerido(nombre)} )
 email.addEventListener('blur', ()=>{validarEmail(email)})
