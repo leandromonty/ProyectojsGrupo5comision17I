@@ -8,6 +8,7 @@
     font-family: 'Montserrat', sans-serif;
     
     
+    
   }
 
   .fontPri{
@@ -18,6 +19,9 @@
 
     scroll-behavior: smooth;
   }
+  body{
+    background-color: black;
+  }
   .navv{
     width: 100%;
     /*position: fixed;*/
@@ -25,15 +29,19 @@
     margin: 0;
     padding: 0;
     z-index: 2;
-    background-color: rgba(233, 185, 81, 0.822);
+    background-color: rgba(196, 58, 23, 0.918);
 } 
 .footer-index{
     margin-top: 50px;
       padding-top: 20px;
       padding-bottom: 20px;
-      background-color: rgba(109, 66, 45);
+      background-color: rgba(196, 58, 23, 0.918);
       color: black;
-  }
+    }
+
+    .tituloBl{
+      color: white;
+    }
   
   #btnRegistrarse{
     background-color:rgba(109, 66, 45) ;
@@ -48,6 +56,10 @@
   .botonini{
       background-color: black;
       border-color: black;
+  }
+  .botonregi{
+    background-color: red;
+    border: black;
   }
 
   .main-inisesion{
