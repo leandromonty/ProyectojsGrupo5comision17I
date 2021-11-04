@@ -22,6 +22,9 @@
   body{
     background-color: black;
   }
+  .body404{
+    background-color: rgb(240, 217, 217);
+  }
   .navv{
     width: 100%;
     /*position: fixed;*/
