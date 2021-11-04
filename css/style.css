@@ -87,3 +87,22 @@
       object-fit: cover;
       
   } 
+
+  .navA{
+    color: white;
+    margin-left: 5px;
+    background-color: black;
+    box-shadow: 3px 3px 3px rgb(71, 18, 18);
+  }
+
+  .navAactive{
+    background-color: rgb(65, 14, 14);
+    box-shadow: 2px 2px 2px rgb(71, 18, 18);
+  }
+
+  .navA:hover{
+    color: rgb(160, 152, 141);
+    margin-left: 5px;
+    background-color: black;
+    box-shadow: 1px 1px 1px rgb(71, 18, 18);
+  }
